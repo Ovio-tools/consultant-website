@@ -136,11 +136,24 @@ export default function Navbar() {
         id="mobile-nav"
         aria-label="Mobile navigation"
         aria-hidden={!drawerOpen}
-        className={`fixed top-10 right-0 bottom-0 z-40 w-72 bg-white shadow-modal flex flex-col pt-[72px] md:hidden transform transition-transform duration-200 ease-in-out ${
+        className={`fixed top-10 right-0 bottom-0 z-40 w-72 bg-white shadow-modal flex flex-col md:hidden transform transition-transform duration-200 ease-in-out ${
           drawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <ul className="flex flex-col px-6 pt-4 gap-1">
+        {/* Drawer header with close button */}
+        <div className="flex items-center justify-between px-6 h-16 border-b border-border-default flex-shrink-0">
+          <span className="text-navy font-semibold">Menu</span>
+          <button
+            onClick={() => setDrawerOpen(false)}
+            aria-label="Close navigation"
+            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-gray-100 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <ul className="flex flex-col px-6 pt-2 gap-1">
           {navLinks.map((link) =>
             link.isModal ? (
               <li key="contact-mobile">

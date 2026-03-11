@@ -57,7 +57,7 @@ export default function ServicesPreview() {
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
                 {service.icon}
               </div>
-              <h3 className="text-subheading text-navy mb-3">{service.title}</h3>
+              <h3 className="text-base font-semibold text-navy mb-3">{service.title}</h3>
               <p className="text-base text-text-secondary leading-relaxed mb-5">
                 {service.description}
               </p>
