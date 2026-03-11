@@ -153,7 +153,7 @@ export default function ContactForm() {
           <textarea
             id="cf-message"
             name="message"
-            rows={4}
+            rows={8}
             required
             value={values.message}
             onChange={handleChange}

@@ -58,7 +58,7 @@ export default function ServicesGrid() {
       <div className="container-site">
         <div className="space-y-0 -mx-4 sm:-mx-6 lg:-mx-8">
           {services.map((service) => (
-            <div key={service.id} id={service.id} className={`${service.bg} px-4 sm:px-6 lg:px-8 py-12 lg:py-16`}>
+            <div key={service.id} id={service.id} className={`${service.bg} px-4 sm:px-6 lg:px-8 py-12 lg:py-16 scroll-mt-[116px] lg:scroll-mt-[124px]`}>
               <div
                 className={`max-w-site mx-auto flex flex-col gap-10 lg:gap-16 ${
                   service.reversed ? 'md:flex-row-reverse' : 'md:flex-row'

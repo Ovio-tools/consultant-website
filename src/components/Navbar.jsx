@@ -15,6 +15,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [aboutVisible, setAboutVisible] = useState(false)
   const pathname = usePathname()
   const { openModal } = useContactModal()
 
@@ -49,9 +50,26 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [drawerOpen])
 
+  // Track About section visibility via IntersectionObserver (homepage only)
+  useEffect(() => {
+    if (pathname !== '/') {
+      setAboutVisible(false)
+      return
+    }
+    const el = document.getElementById('about')
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setAboutVisible(entry.isIntersecting),
+      { rootMargin: '-104px 0px -40% 0px', threshold: 0 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [pathname])
+
   function isActive(href) {
     if (!href) return false
-    if (href === '/') return pathname === '/'
+    if (href === '/#about') return aboutVisible
+    if (href === '/') return pathname === '/' && !aboutVisible
     return pathname.startsWith(href.split('#')[0]) && href.split('#')[0] !== '/'
   }
 
