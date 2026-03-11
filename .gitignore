@@ -28,4 +28,7 @@ yarn-error.log*
 # editor
 .vscode/
 .idea/
-*.png
+
+# screenshots (root-level only, not public/)
+/*.png
+/*.jpg
