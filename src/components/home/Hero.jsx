@@ -4,7 +4,7 @@ import OpenModalButton from './OpenModalButton'
 
 export default function Hero() {
   return (
-    <section className="section-padding bg-white pt-[calc(3rem+104px)] lg:pt-[calc(6rem+112px)]">
+    <section className="bg-white pt-[152px] pb-12 lg:pt-[208px] lg:pb-24">
       <div className="container-site">
         <div className="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
           {/* Text column (60%) */}
