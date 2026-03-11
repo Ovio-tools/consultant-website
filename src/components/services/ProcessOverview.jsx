@@ -49,11 +49,11 @@ export default function ProcessOverview() {
         </div>
 
         {/* Mobile: vertical stepper */}
-        <ol className="md:hidden relative pl-10">
+        <ol className="md:hidden relative pl-14">
           <div className="absolute left-[19px] top-5 bottom-5 w-px bg-border-default" aria-hidden="true" />
           {steps.map((step, i) => (
             <li key={step.number} className={`relative ${i < steps.length - 1 ? 'pb-8' : ''}`}>
-              <div className="absolute -left-10 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">
+              <div className="absolute -left-14 w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">
                 {step.number}
               </div>
               <div className="pt-1.5">
